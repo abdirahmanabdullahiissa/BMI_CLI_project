@@ -8,22 +8,40 @@ fake= Faker()
 Session = sessionmaker(bind=engine)
 session = Session()
 
-user =[
-    User (name = fake.name(),
-          age = fake.random_int(),
-          gender = fake.name()
-          )
-    for _ in range(5)
-]
+#to delete records
 
-bmi_records = [
-    bmi_records=(weight= fake.random_int(),
-                 height= fake.random_int
-                 bmi= )
+# session.query(User).delete()
+# session.query(BMIRecord).delete()
 
-]
-session.add_all(user)
+# user =[
+#     User (name = fake.name(),
+#           age = fake.random_int(),
+#           gender = fake.name()
+#           )
+#     for _ in range(12)
+# ]
+# session.add_all(user)
 
+# session.commit()
+# session.close()
+
+# fake= Faker()
+# session=sessionmaker(bind=engine)
+# session= session()
+
+# BMIRecord= [
+#     BMIRecord (weight = fake.random_int(min=18, max=200),
+#                height = fake.random_digit(),
+#                bmi = fake.random_digit(),
+#                classification = fake.name(),
+#                user_id = fake.random_int()
+#                )
+
+#     for _ in range(10)
+               
+    
+# ]
+# session.add_all(BMIRecord)
 session.commit()
 session.close()
 
